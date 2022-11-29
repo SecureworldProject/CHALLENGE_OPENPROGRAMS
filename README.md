@@ -5,7 +5,7 @@ Este challenge genera una cadena binaria con un bit por programa. en el ejemplo 
 la cadena "correcta" es la que quiera el administrador , no necesariamente todo 1s
 
 la lista de programas abiertos debe ser una cadena con los programas separados por comas
-''' 
+``` 
 {
 "FileName": "challenge_loader_python.dll",
 "Description": "challenge de progs abiertos",
@@ -17,4 +17,4 @@ la lista de programas abiertos debe ser una cadena con los programas separados p
 },
 "Requirements": "none" 
 }
-'''
+```
