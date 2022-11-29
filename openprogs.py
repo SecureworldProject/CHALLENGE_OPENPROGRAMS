@@ -32,7 +32,9 @@ def init(props):
 
 def executeChallenge():
     print("Starting execute")
-        
+    print("Starting hola1")
+    print("Starting holaaaa")
+    
     #mecanismo de lock BEGIN, para garantizar una sola interaccion con user a la vez
     #-----------------------
     #no lo necesito porque no es intrusivo
@@ -43,8 +45,16 @@ def executeChallenge():
     for i in psutil.process_iter():
         lista_progs.append(i.name())
     # no vamos a imprimir la lista porque es enorme
-    lista= props_dict["process_list"]
 
+    print("Starting hola2")
+    cosa=props_dict["module_python"]
+    print ("cosa es", cosa)
+    
+    lista= props_dict["process_list"] # lista es un string con subcadenas separadas por ","
+    print ("lista es", lista)
+    lista=lista.replace(" ", "")
+    lista =lista.split(",")
+    print("Starting hola3")
     cad=""
     for i in lista:
         if i in lista_progs:
@@ -83,9 +93,13 @@ if __name__ == "__main__":
     # cisco user interface "vpnui.exe"
     # lenovo power management service "ibmpmsvc.exe"
     
-    midict={"process_list": ("chrome.exe","notepad.exe", "Teams.exe", \
+    midict={"process_list": ["chrome.exe","notepad.exe", "Teams.exe", \
                       "ccSvcHst.exe", "sisipsutil.exe","vpnui.exe", \
-                      "ibmpmsvc.exe")} 
+                      "ibmpmsvc.exe"]} 
+
+    midict={"process_list": "chrome.exe,notepad.exe, Teams.exe,ccSvcHst.exe,sisipsutil.exe,vpnui.exe,ibmpmsvc.exe",
+            "module_python": "hola chavales"} 
+
     init(midict)
     executeChallenge()
 
